@@ -19,7 +19,7 @@ function MainContent({ activeMenuItem }) {
 
   /* ---------------- Fetch Folders (all) ---------------- */
   useEffect(() => {
-    fetch("http://localhost:5000/api/folders", {
+    fetch("hhttps://project-drive-1rp3.onrender.com/api/folders", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -30,8 +30,8 @@ function MainContent({ activeMenuItem }) {
   /* ---------------- Fetch Images (current folder or root) ---------------- */
   useEffect(() => {
     const url = selectedFolderId
-      ? `http://localhost:5000/api/images/folder/${selectedFolderId}`
-      : "http://localhost:5000/api/images"; // root-level files
+      ? `https://project-drive-1rp3.onrender.com/api/images/folder/${selectedFolderId}`
+      : "https://project-drive-1rp3.onrender.com/api/images"; // root-level files
 
     setLoadingImages(true);
     fetch(url, { headers: { Authorization: `Bearer ${token}` } })
@@ -62,7 +62,7 @@ function MainContent({ activeMenuItem }) {
   } // ✅ Only add if exists
 
   try {
-    const res = await fetch("http://localhost:5000/api/images", {
+    const res = await fetch("https://project-drive-1rp3.onrender.com/api/images", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -227,7 +227,7 @@ function MainContent({ activeMenuItem }) {
                     src={
                       image.imageUrl.startsWith("http")
                         ? image.imageUrl
-                        : `http://localhost:5000${image.imageUrl}`
+                        : `https://project-drive-1rp3.onrender.com${image.imageUrl}`
                     }
                     alt={image.name}
                     className="w-full aspect-video object-cover rounded"
