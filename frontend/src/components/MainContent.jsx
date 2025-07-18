@@ -19,7 +19,7 @@ function MainContent({ activeMenuItem }) {
 
   /* ---------------- Fetch Folders (all) ---------------- */
   useEffect(() => {
-    fetch("hhttps://project-drive-1rp3.onrender.com/api/folders", {
+    fetch("https://project-drive-1rp3.onrender.com/api/folders", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
